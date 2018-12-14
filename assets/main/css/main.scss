@@ -1,0 +1,702 @@
+@import "veriables";
+@import "reset";
+@import "themes";
+
+body{
+  background-color: $cloud;
+  font-size:14px;
+  font-family: $mainFamily;
+}
+.overlay{
+  width: 100%;
+  height:100%;
+  left:0;
+  top:0;
+  position: fixed;
+  z-index: 999;
+  display: none;
+  background-color: rgba(1, 1, 1, 0.8);
+}
+.searchBox{
+  .form-group{
+    margin-bottom:0;
+    input{
+      width:100%;
+      height:32px;
+      line-height:32px;
+      border: 1px solid #2b2b2b;
+      font-weight: 300;
+      color:#f7f7f7;
+      padding-left:15px;
+      padding-right:15px;
+      font-size:13px;
+      background-color: transparent;
+      @include transition( all .3s);
+      &::placeholder{
+        color: #737373;
+        font-weight: 300;
+      }
+      &:focus{
+        border-color: #737373;
+      }
+    }
+    button{
+      position: absolute;
+      right:0;
+      line-height:32px;
+      height:32px;
+      width:32px;
+      text-align:center;
+      border:none;
+      top:0;
+      background-color: transparent;
+      color: #737373;
+    }
+  }
+}
+.mblSearch{
+  .form-group{
+    input{
+      color:#2b2b2b;
+    }
+  }
+}
+
+.carouselSection{
+  .mainCarousel{
+    position: relative;
+    .owl-nav{
+      margin-top:0;
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: 100%;
+      .owl-prev,.owl-next{
+
+        padding: 0 !important;
+      }
+      button{
+        @include transition(all .3s);
+        &:hover{
+          background-color: transparent !important;
+          color:#000;
+        }
+        span{
+          font-size:32px;
+          line-height:32px;
+        }
+      }
+    }
+  }
+}
+.mainBanner{
+  a{
+    img{
+      filter: gray;
+      -webkit-filter: grayscale(1);
+      filter: grayscale(1);
+      @include transition( all .3s );
+    }
+    &:hover{
+      img{
+        filter: gray;
+        -webkit-filter: grayscale(1);
+        filter: grayscale(0);
+      }
+    }
+  }
+}
+.mainSidebar{
+  padding: $stagePadding;
+  a{
+    color:$themeOneMain;
+  }
+  div:first-child{
+    font-size:18px;
+    padding: 5px 10px;
+    color:#fff;
+  }
+  div:last-child{
+    background-color: #f7f7f7;
+    a,label{
+      padding: 7px;
+      font-size:14px;
+      &:hover{
+        color:#fff;
+        @include transition(all .3s)
+      }
+    }
+  }
+}
+
+.breadCrumb{
+  padding: $stagePadding;
+  ul{
+    background-color: $themeOneMain;
+    padding: 6px 5px;
+    margin-bottom: 0;
+    li{
+      display: inline-block;
+      padding-right: 15px;
+      position: relative;
+      a{
+        color:#f7f7f7;
+        font-size:14px;
+      }
+      &:after{
+        position: absolute;
+        right: 0;
+        content: "\f054";
+        top:3px;
+        font-size:12px;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        color:#fff;
+      }
+    }
+    li.active{
+      a{
+        color:#fff;
+      }
+    }
+    li:first-child{
+      padding-left:10px;
+    }
+    li:last-child{
+      padding-right: 0px;
+      &:after{
+        display: none;
+      }
+    }
+  }
+}
+.productDetail{
+  .descSection{
+    h1.caption{
+      font-size:18px;
+      color:#232323;
+    }
+    a.brand{
+      font-weight: 700;
+      &:hover{
+        color:#232323;
+      }
+    }
+    .priceSection{
+      span{
+        color:#232323;
+      }
+      span:first-child{
+        font-size:24px;
+      }
+      span:last-child{
+        text-decoration: line-through;
+        &:hover{
+          text-decoration: line-through !important;
+        }
+      }
+    }
+    .addable{
+      .count{
+        button{
+          color:#fff;
+          border:none;
+          width: 35px;
+          height:35px;
+          &:hover{
+            cursor:pointer;
+          }
+        }
+        input{
+          padding:5px;
+          border:none;
+        }
+      }
+    }
+    .additionalDescription{
+      span{}
+    }
+  }
+}
+$color_1: #111;
+$color_2: #fff;
+.productTab{
+  border:none;
+  li.nav-item{
+    border:none;
+    margin-bottom: 0;
+    a{
+      @include border(0);
+      border:none;
+      color:#fff;
+    }
+  }
+}
+table.kredi_taksit_style {
+  float: left;
+  width: 100%;
+  height: auto;
+  border: 0px;
+  th.kredi_taksit_logolar {
+    color: $color_1;
+    background: #f8f8f8;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+    img {
+      width: 64px;
+      display: inline-block;
+    }
+  }
+  tr {
+    td {
+      padding: 10px 10px;
+      font-size: 15px;
+    }
+    td.kredi_taksit_taksit_number {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+    }
+    td.Maximum {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #f52295;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+    td.Cardfinans {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #2d5fc2;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+    td.Paraf {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #00cbeb;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+    td.World {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #6f6b99;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+    td.Axess {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #e2b631;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+    td.Bonus {
+      text-align: center;
+      border: 1px dashed #d6d6d6;
+      background: #479279;
+      color: $color_2;
+      .kredi_taksit_taksit_fiyat {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 700;
+        font-size: 14px;
+      }
+      .kredi_taksit_taksit_toplam {
+        float: left;
+        width: 100%;
+        height: auto;
+        font-weight: 300;
+        font-size: 12px;
+      }
+    }
+  }
+}
+header{
+  .top{
+    .social, .connection{
+      ul{
+        li{
+          display: inline-block;
+          a{
+            display: inline-block;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+    .social{
+      ul{
+        li{
+          a{
+            height:30px;
+            width:30px;
+            line-height:30px;
+            text-align:center;
+            margin-right:5px;
+          }
+        }
+        li:last-child{
+          a{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .connection{
+      ul{
+        li{
+          a{
+            margin-left:8px;
+          }
+        }
+        li:first-child{
+          a{
+            margin-left:0;
+          }
+        }
+      }
+    }
+  }
+  .mid{
+    padding:15px 0;
+    a.logo{
+      img{
+        max-width: 100%;
+
+      }
+    }
+    .basket{
+      a{
+        position: relative;
+        color:#f7f7f7;
+        font-size:14px;
+        font-weight: 300;
+        span{
+          line-height: 14px;
+          position: relative;
+          top: 3px;
+        }
+        img.basketIcon{
+          width: 20px;
+          margin-left:8px;
+        }
+        &:before{
+          content:"";
+          position: absolute;
+          left:0;
+          bottom:-5px;
+          height:1px;
+          background-color: #fff;
+          width: 0%;
+          @include transition(all .3s);
+        }
+        &:hover{
+          color:#fff;
+          &:before{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .navOpener{
+      border:none;
+      height:30px;
+      width: 30px;
+      line-height:30px;
+      text-align: center;
+      background-color: transparent;
+      color:#f7f7f7;
+      &:hover,&:focus{
+        cursor: pointer;
+      }
+    }
+  }
+  .bott{
+    ul{
+      li{
+        display: inline-block;
+        margin-right:-4px;
+        a{
+          padding:10px 15px;
+          display: inline-block;
+          font-weight: 300;
+        }
+      }
+      li:last-child{
+        margin-right:0px;
+      }
+    }
+  }
+}
+footer{
+  padding: 30px 0 0 0;
+  .bott{
+    margin-top:15px;
+    background-color: #000;
+  }
+  h5{
+    color:$themeOneFourth;
+    position: relative;
+    padding-bottom:5px;
+    font-weight: 300;
+    margin-bottom:10px;
+    font-size:16px;
+    &:before{
+      content:"";
+      position: absolute;
+      left:0;
+      bottom:0px;
+      width: 50%;
+      height:1px;
+      background-color: #353535;
+    }
+  }
+  ul{
+    li{
+      a{
+        color:$themeOneFourth;
+        font-weight: 300;
+        font-size:14px;
+        &:hover{
+          color:#fff;
+        }
+      }
+    }
+  }
+  p.footerAbout{
+    color:$themeOneFourth;
+  }
+}
+.mainProductsList{
+  padding: $stagePadding;
+  background-color: #fff;
+  .captionBanner{
+    width: 100%;
+    background-color:$themeOneMain;
+    padding:10px 15px;
+    h1{
+      font-size:20px;
+      line-height:24px;
+      color:#fff;
+      font-weight: 300;
+      margin-bottom:0;
+    }
+    a{
+      font-size:14px;
+      color:#ddd;
+      &:hover{
+        color:#fff;
+      }
+    }
+  }
+  .item{
+    color:$themeOneMain;
+    padding:10px;
+    border:1px solid #ddd;
+    .imgSection{
+      position: relative;
+      height:233px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      img{
+        width: 100%;
+        overflow: hidden;
+        @include transition(all .3s);
+      }
+    }
+    .descSection{
+      text-align: center;
+      .productName{
+        font-weight: 300;
+        font-size:14px;
+        display: block;
+        color:$themeOneMain;
+      }
+      .price{
+        margin-top:5px;
+        display: block;
+        font-size:16px;
+        b{
+          color:#000;
+        }
+      }
+    }
+    .addBasketSection{
+      width: 100%;
+      text-align: center;
+      background-color: $themeOneMain;
+      color:#fff;
+      font-size:14px;
+      padding:5px;
+      margin-top:10px;
+    }
+    &:hover{
+      .imgSection{
+        img{
+          @include transform(scale(1.1));
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 990px){
+
+  .mainProductsList{
+    .item{
+      .imgSection{
+        height:128px;
+      }
+    }
+  }
+}
+@media(max-width: 768px){
+
+  header{
+    position: relative;
+    .top{
+      .connection{
+
+      }
+    }
+    .mid{
+      padding:15px 0 ;
+      .logo{
+        width: 40% !important;
+      }
+    }
+    .bott{
+      position: fixed;
+      left: -100%;
+      top:0;
+      height:100%;
+      width: 70%;
+      z-index: 1020;
+      overflow-y: auto;
+      @include transition(all .3s);
+      .container{
+        padding-left:0;
+        padding-right:0;
+      }
+      ul{
+        li{
+          display: block;
+          margin-right:0;
+          width: 100%;
+          a{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .bott.opened{
+      left:0;
+    }
+  }
+  footer{
+    a.d-block{
+      img{
+        width: 50%;
+        display: block;
+        margin-left:auto;
+        margin-right:auto;
+        margin-bottom:10px;
+      }
+    }
+    p.footerAbout{
+      margin-bottom: 30px;
+    }
+    text-align:center;
+    h5{
+      &:before{
+        left:50%;
+        @include transform(translateX(-50%));
+      }
+    }
+    ul{
+      margin-bottom: 35px;
+    }
+    .bott{
+      display: none;
+    }
+  }
+  .mainProductsList{
+    .captionBanner{
+      h1{
+        font-size:18px;
+        line-height:22px;
+      }
+    }
+    .item{
+      .imgSection{
+        height:auto;
+      }
+    }
+  }
+}

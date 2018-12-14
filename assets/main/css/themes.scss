@@ -1,0 +1,95 @@
+.themeOne{
+  header{
+    .top{
+      background-color: $themeOneMain;
+      .social{
+        ul{
+          li{
+            a{
+              color:#fff;
+              &:hover{
+                background-color: $themeOneSecond;
+              }
+            }
+          }
+        }
+      }
+      .connection{
+        ul{
+          li{
+            a{
+              color:$themeOneFourth;
+              &:hover{
+                color:#fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .mid{
+      background-color: $themeOneSecond;
+    }
+    .bott{
+      background-color: $themeOneFifth;
+      ul{
+        li{
+          a{
+            color:#ddd;
+            &:hover,&:focus{
+              background-color: $themeOneSecond;
+            }
+          }
+        }
+        li.active{
+          a{
+            background-color: $themeOneSecond;
+          }
+        }
+      }
+    }
+  }
+  footer{
+    background-color: $themeOneSecond;
+  }
+
+  .productDetail{
+    .descSection{
+      a.brand{
+        color:$themeOneMain;
+      }
+    }
+    .addable{
+      .count{
+        button{
+          background-color: $themeOneMain;
+        }
+      }
+    }
+  }
+  .mainSidebar{
+    div:first-child{
+      background-color: $themeOneMain;
+    }
+    div:last-child{
+      a,label{
+        &:hover{
+          background-color:$themeOneMain;
+        }
+      }
+    }
+  }
+
+  .productTab{
+    background-color: $themeOneMain;
+    li.nav-item{
+      a{
+        color:#fff;
+        background-color: $themeOneMain;
+      }
+      a.active{
+        background-color: #232323;
+      }
+    }
+  }
+}
